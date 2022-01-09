@@ -179,7 +179,7 @@ class Stage:
                 y = self.tmv + yc
                 for xc in range(WIDTH_TILES):
                     x = self.tmu + xc
-                    tile = pyxel.tilemap(self.tm).get(x, y)
+                    tile = pyxel.tilemap(self.tm).pget(x, y)
                     if tile == POST_TILE:
                         self.solid_rects.append([xc*8 + 8, yc*8 + 16, 8, 8])
                     elif tile in SLOPE_TILES:
@@ -189,9 +189,9 @@ class Stage:
                         
                     if tile == POCKET_TILE_NW:
                         if x < self.tmu + WIDTH_TILES-1 and y < self.tmv + HEIGHT_TILES-1:
-                            if pyxel.tilemap(self.tm).get(x+1, y) == POCKET_TILE_NE and\
-                                pyxel.tilemap(self.tm).get(x+1, y+1) == POCKET_TILE_SE and\
-                                pyxel.tilemap(self.tm).get(x, y+1) == POCKET_TILE_SW:
+                            if pyxel.tilemap(self.tm).pget(x+1, y) == POCKET_TILE_NE and\
+                                pyxel.tilemap(self.tm).pget(x+1, y+1) == POCKET_TILE_SE and\
+                                pyxel.tilemap(self.tm).pget(x, y+1) == POCKET_TILE_SW:
                                     self.pockets.append([xc*8 + 8, yc*8 + 16, 16, 16])
                                     
                     if tile != POST_TILE and \
@@ -335,7 +335,7 @@ class Stage:
     
     # returns None or angle
     def get_tile_angle(self, x, y): # x,y is screen pixels.
-        tile = pyxel.tilemap(self.tm).get(
+        tile = pyxel.tilemap(self.tm).pget(
             self.tmu + math.floor((x-8)/8), 
             self.tmv + math.floor((y-16)/8)
         )
@@ -395,8 +395,8 @@ class Stage:
                 i.update(self)
             
     def draw(self, shake_x, shake_y):
-        pyxel.bltm(shake_x + 8, shake_y + 16, self.tm, self.tmu, self.tmv, 
-            WIDTH_TILES, HEIGHT_TILES, 8)
+        pyxel.bltm(shake_x + 8, shake_y + 16, self.tm, self.tmu * 8, self.tmv * 8, 
+            WIDTH_TILES * 8, HEIGHT_TILES * 8, 8)
             
         for i in self.lights:
             i.draw(shake_x, shake_y)

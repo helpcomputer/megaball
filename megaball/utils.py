@@ -51,13 +51,13 @@ def get_angle_deg(x1, y1, x2, y2):
     return (degs + 360) % 360
 
 def get_tile_x(index):
-    return math.floor(index % 32) * 8
+    return index[0] * 8 # math.floor(index % 32) * 8
     
 def get_tile_y(index):
-    return math.floor(index / 32) * 8
+    return index[1] * 8 # math.floor(index / 32) * 8
 
 def get_tile_index(x, y):
-    return x/8 + (y / 8) * 32
+    return (x // 8, y // 8) # x/8 + (y / 8) * 32
     
 def lerp(v, d):
     #print("delta: " + str(d) + ", v: " + str(v[0]) + "," + str(v[1]))

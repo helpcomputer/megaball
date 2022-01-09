@@ -10,9 +10,8 @@ class App:
         pyxel.init(
             constants.GAME_WIDTH, 
             constants.GAME_HEIGHT, 
-            caption=constants.GAME_TITLE, 
+            title=constants.GAME_TITLE, 
             fps=constants.GAME_FPS, 
-            scale=constants.GAME_SCALE
         )
         
         pyxel.load(constants.RESOURCE_FILE)
