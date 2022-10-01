@@ -66,11 +66,13 @@ class MainMenu:
             self.press_start_flash_ticks += 1
             if self.press_start_flash_ticks == 50:
                 self.press_start_flash_ticks = 0
-            if input.BUTTON_START in last_inputs.pressed:
+            if input.BUTTON_START in last_inputs.pressed or \
+                input.BUTTON_A in last_inputs.pressed:
                 self.show_press_start = False
                 self.sel_index = 0
         else:
-            if input.BUTTON_A in last_inputs.pressed:
+            if input.BUTTON_START in last_inputs.pressed or \
+                input.BUTTON_A in last_inputs.pressed:
                 self._pressed_select()
             elif input.UP in last_inputs.pressed:
                 self._change_selection(-1)

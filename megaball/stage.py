@@ -90,10 +90,8 @@ class PauseMenu:
         if not self.is_visible or self.quitting:
             return
             
-        if input.BUTTON_START in last_inputs.pressed:
-            self.is_visible = False
-            self.sel_index = 0
-        elif input.BUTTON_A in last_inputs.pressed:
+        if input.BUTTON_START in last_inputs.pressed or \
+            input.BUTTON_A in last_inputs.pressed:
             self._pressed_select()
         elif input.UP in last_inputs.pressed:
             self._change_selection(-1)
@@ -367,7 +365,8 @@ class Stage:
             if self.pause_menu.is_visible:
                 self.pause_menu.update(last_inputs)
             else:
-                if input.BUTTON_START in last_inputs.pressed:
+                if input.BUTTON_START in last_inputs.pressed or \
+                    input.BUTTON_B in last_inputs.pressed:
                     if self.state == STATE_PLAY or \
                         self.state == STATE_PLAYER_WEAPON:
                         self.pause_menu.is_visible = True

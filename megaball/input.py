@@ -36,6 +36,7 @@ class Input:
             self.pressing.append(RIGHT)
         
         if pyxel.btn(pyxel.KEY_Z) or pyxel.btn(pyxel.KEY_K) or \
+            pyxel.btn(pyxel.KEY_SPACE) or \
             pyxel.btn(pyxel.GAMEPAD1_BUTTON_A):
             self.pressing.append(BUTTON_A)
         
@@ -46,10 +47,6 @@ class Input:
         if pyxel.btn(pyxel.KEY_RETURN) or \
             pyxel.btn(pyxel.GAMEPAD1_BUTTON_START):
             self.pressing.append(BUTTON_START)
-            
-        if pyxel.btn(pyxel.KEY_SPACE) or \
-            pyxel.btn(pyxel.GAMEPAD1_BUTTON_BACK):
-            self.pressing.append(BUTTON_SELECT)
             
         # pressed
         if pyxel.btnp(pyxel.KEY_UP) or pyxel.btnp(pyxel.KEY_W) or \
@@ -67,6 +64,7 @@ class Input:
             self.pressed.append(RIGHT)
         
         if pyxel.btnp(pyxel.KEY_Z) or pyxel.btnp(pyxel.KEY_K) or \
+            pyxel.btnp(pyxel.KEY_SPACE) or \
             pyxel.btnp(pyxel.GAMEPAD1_BUTTON_A):
             self.pressed.append(BUTTON_A)
         
@@ -77,9 +75,5 @@ class Input:
         if pyxel.btnp(pyxel.KEY_RETURN) or \
             pyxel.btnp(pyxel.GAMEPAD1_BUTTON_START):
             self.pressed.append(BUTTON_START)
-            
-        if pyxel.btnp(pyxel.KEY_SPACE) or \
-            pyxel.btnp(pyxel.GAMEPAD1_BUTTON_BACK):
-            self.pressed.append(BUTTON_SELECT)
        
         
