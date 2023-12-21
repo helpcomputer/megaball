@@ -1,4 +1,3 @@
-
 import pyxel
 
 import globals
@@ -16,7 +15,7 @@ MUSIC = [
     MUS_START,
     MUS_STAGE_COMPLETE,
     MUS_DEATH,
-    #MUS_GAME_OVER
+    # MUS_GAME_OVER
 ]
 
 SND_MENU_MOVE = 16
@@ -33,25 +32,27 @@ SOUNDS = [
     SND_USED_WEAPON,
 ]
 
+
 def play_sound(snd, looping=False):
     if globals.g_sound_on == False:
         return
-        
+
     if snd not in SOUNDS:
         return
-        
+
     if pyxel.play_pos(3) != -1:
         return
-        
+
     pyxel.play(3, snd, loop=looping)
-    
+
+
 def play_music(msc, looping=False):
     if globals.g_music_on == False:
         return
-        
+
     if msc not in MUSIC:
         return
-        
+
     pyxel.stop()
-        
+
     pyxel.playm(msc, loop=looping)

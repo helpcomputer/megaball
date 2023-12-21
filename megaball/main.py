@@ -1,4 +1,3 @@
-
 import constants
 import game
 import input
@@ -20,7 +19,7 @@ class App:
         self.input = input.Input()
         self.game = game.Game()
         pyxel.mouse(False)
-        #pyxel.mouse(True)
+        # pyxel.mouse(True)
 
         pyxel.run(self.update, self.draw)
 
@@ -30,5 +29,6 @@ class App:
 
     def draw(self):
         self.game.draw()
+
 
 App()

@@ -1,4 +1,3 @@
-
 GAME_TITLE = "MEGABALL"
 GAME_WIDTH = 160
 GAME_HEIGHT = 144
@@ -56,18 +55,15 @@ COLLIDE_MATRIX_ALL = [
     COLLIDE_TOP_LEFT,
     COLLIDE_TOP_RIGHT,
     COLLIDE_BOTTOM_RIGHT,
-    COLLIDE_BOTTOM_LEFT
+    COLLIDE_BOTTOM_LEFT,
 ]
+
 
 def is_colliding_matrix(x, y, matrix):
     if matrix not in COLLIDE_MATRIX_ALL:
         return False
-        
+
     if x < 0 or x > 7 or y < 0 or y > 7:
         return False
-        
+
     return matrix[y][x]
-    
-    
-    
-    
