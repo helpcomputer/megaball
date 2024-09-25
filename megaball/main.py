@@ -1,3 +1,10 @@
+# title: Megaball
+# author: Adam
+# desc: An arcade ball physics game
+# site: https://github.com/kitao/megaball
+# license: MIT
+# version: 1.0
+
 import constants
 import game
 import input
