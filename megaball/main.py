@@ -1,36 +1,41 @@
-
-import pyxel
+# title: Megaball
+# author: Adam
+# desc: An arcade ball physics game
+# site: https://github.com/kitao/megaball
+# license: MIT
+# version: 1.0
 
 import constants
-import input
 import game
+import input
+import pyxel
+
 
 class App:
     def __init__(self):
         pyxel.init(
-            constants.GAME_WIDTH, 
-            constants.GAME_HEIGHT, 
-            caption=constants.GAME_TITLE, 
-            fps=constants.GAME_FPS, 
-            scale=constants.GAME_SCALE
+            constants.GAME_WIDTH,
+            constants.GAME_HEIGHT,
+            title=constants.GAME_TITLE,
+            fps=constants.GAME_FPS,
         )
-        
+
         pyxel.load(constants.RESOURCE_FILE)
-        pyxel.image(0).load(0, 0, constants.IMAGE_BANK_0_FILE)
+        pyxel.images[0].load(0, 0, constants.IMAGE_BANK_0_FILE)
 
         self.input = input.Input()
         self.game = game.Game()
         pyxel.mouse(False)
-        #pyxel.mouse(True)
+        # pyxel.mouse(True)
 
         pyxel.run(self.update, self.draw)
 
     def update(self):
         self.input.get()
         self.game.update(self.input)
-        
+
     def draw(self):
         self.game.draw()
 
+
 App()
-  
