@@ -3,7 +3,7 @@
 ## Introduction
 Megaball is a ball physics game written in Python using the Pyxel game engine. It was made for [Game Boy Jam 8](https://itch.io/jam/gbjam-8). It is insprired by the Taito classic arcade game "Xyzolog."
 
-You can see the jam entry and download a Windows binary [here](https://helpcomputer.itch.io/megaball).
+You can see the jam entry and download a Windows binary [here](https://badcomputer0.itch.io/megaball).
 
 ![](/images/megaball-prev00.gif?raw=true "")
 
@@ -22,7 +22,7 @@ You can see the jam entry and download a Windows binary [here](https://helpcompu
 - F2 key to toggle music.
 
 ## Credits
-- Game design and art by [helpcomputer0](https://twitter.com/helpcomputer0)
+- Game design and art by [badcomputer](https://twitter.com/badcomputer0)
 - Sound and music by [Mike Richmond](https://twitter.com/richmondmike)
 - Font by [Damien Guard](https://twitter.com/damienguard)
 
